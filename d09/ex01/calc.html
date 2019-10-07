@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+    <style>
+        #form {
+            text-align: center;
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+<form id="form" onsubmit="calculate(this)">
+    <input id="left" type="text">
+    <select name="sign">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+        <option>%</option>
+    </select>
+    <input id="right" type="text">
+    <button name="submit">Try me!</button>
+</form>
+<script>
+    var input1 = document.querySelectorAll("input");
+    var selector1 = document.querySelector('selector');
+    var button1 = document.querySelector('button');
+    var t = setTimeout(hello, 30000);
+    console.log(input1);
+    for (var Inputs of input1) {
+        Inputs = addEventListener('click', clear);
+        Inputs = addEventListener('input', clear);
+    }
+    selector1 = document.querySelector('click', clear);
+    button1 = document.querySelector('click', clear);
+
+    // window.onload = function () {
+    //     setTimeout(hello, 3000);
+    // };
+
+    function clear() {
+        clearTimeout(t);
+        t = setTimeout(hello, 30000);
+        console.log("1");
+    }
+
+    function isNumeric(n) {
+        return !isNaN(parseInt(n)) && isFinite(n);
+    }
+
+    function hello() {
+        alert('Please, use me...');
+         // setTimeout(hello, 3000);
+    }
+
+    function calculate(form) {
+        var sign = form.sign.value;
+        var f1 = document.getElementById('left').value;
+        var f2 = document.getElementById('right').value;
+        if (!isNumeric(f1) || !isNumeric(f2)) {
+            alert("Error :(");
+            return;
+        }
+        f1 = parseInt(f1);
+        f2 = parseInt(f2);
+        if (f1 < 0 || f2 < 0 || !isNumeric(f1) || !isNumeric(f2))
+            alert("Error :(");
+        if (f2 === 0)
+            alert("It’s over 9000!");
+        else {
+            switch (sign) {
+                case ('+'):
+                    fin = f1 + f2;
+                    break;
+                case ('-'):
+                    fin = f1 - f2;
+                    break;
+                case ('*'):
+                    fin = f1 * f2;
+                    break;
+                case ('/'):
+                    fin = f1 / f2;
+                    break;
+                case ('%'):
+                    fin = f1 % f2;
+                    break;
+            }
+            console.log(fin);
+            alert(fin);
+        }
+    }
+</script>
+</body>
+</html>

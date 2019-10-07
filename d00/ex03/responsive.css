@@ -1,0 +1,70 @@
+td {
+    width: 5%;
+    height: 60%;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.element {
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 1vw;
+}
+.alkali {
+    background-color: #f95353;
+}
+
+.nonmetal {
+    background-color: #8cc63e;
+}
+
+.alearth {
+    background-color: #ff9935;
+}
+
+.noble {
+    background-color: #fa9d98;
+}
+
+.halogen {
+    background-color: #ffcc00;
+}
+
+.metalloid {
+    background-color: #00a23b;
+}
+
+.post-trans {
+    background-color: #6d90ca;
+}
+
+.transition {
+    background-color: #9aafcc;
+}
+
+.lanthanide {
+    background-color: #64bfda;
+}
+
+.actinide {
+    background-color: #00aec1;
+}
+
+.extend {
+    background-color: aquamarine;
+}
+
+p {
+    color: #494949;
+}
+
+p.number {
+    font-size: 0.7vw;
+}
+
+p.mass {
+    font-size: 0.7vw;
+    text-align: right;
+}

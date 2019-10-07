@@ -1,0 +1,43 @@
+nav {
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+    font-family: 'Gugi', cursive;
+}
+nav ul {
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
+    }
+nav ul li {
+    margin: 0px -6px 0 0;
+    display: inline-block;
+    background-color: blue;
+    min-width: 25%;
+    }
+nav a {
+    display:block;
+    padding:0 15px;
+    color: #fff;
+    font-size:1vw;
+    line-height: 60px;
+    text-decoration:none;
+}
+nav a:hover {
+    background-color: darkblue;
+}
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 25%;
+}
+nav ul li:hover ul {
+    display:inherit;
+}
+nav ul ul li {
+    float:none;
+    display:list-item;
+    position: relative;
+}

@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+</head>
+<body>
+<input id="left" type="text">
+<select id="op" name="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+</select>
+<input id="right" type="text">
+<input type="submit" value="Try me" onclick="action();">
+</body>
+<script>
+    setInterval(() => alert("Please, use me..."), 30000);
+    const say = console.log;
+    const errno = () => alert("Error :(");
+    const ovah = () => alert("It's over 9000!");
+
+    const print = (val) => {
+        alert(val);
+        say(val);
+    }
+    const action = () => {
+        var val1 = $("#left").val();
+        var val2 = $("#right").val();
+        var op = $("#op").val();
+        var n1 = 0;
+        var n2 = 0;
+
+        if (val1 == "" || val2 == "")
+            return (errno());
+        else {
+
+            if (/[^0-9]/.test(val1) || /[^0-9]/.test(val2))
+                return (errno());
+            else {
+                n1 = parseInt(val1, 10);
+                n2 = parseInt(val2, 10);
+                return (calculate(n1, n2, op));
+            }
+        }
+    }
+    const calculate = (i, j, op) => {
+        let ret = 0;
+        if (i >= 0 && j >= 0) {
+            if (op == "+")
+                ret = i + j;
+            else if (op == "-")
+                ret = i - j;
+            else if (op == "*")
+                ret = i * j;
+            else if (op == "/" && j == 0)
+                return (ovah());
+            else if (op == "/" && j > 0)
+                ret = i / j;
+            else if (op == "%" && j == 0)
+                return (ovah());
+            else if (op == "%" && j > 0)
+                ret = i % j;
+            return (print(ret));
+        } else
+            return (errno());
+    }
+</script>
+</html>
